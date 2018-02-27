@@ -1,0 +1,9 @@
+{
+  "name": "ui-common",
+  "version": "5.5.8",
+  "description": "TST Widget Example",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-webserver": "^0.9.1"
+  }
+}

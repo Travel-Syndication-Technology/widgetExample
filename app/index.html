@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="product relative">
+<head>
+    <title>Example Widget Page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="noindex,nofollow">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href='https://sandbox.tstllc.net/web-services/assets/stylesheets/search-widget.css' />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+
+        #widgetPlaceholder {  font-family: 'Roboto', sans-serif; margin: 0 auto; width: 700px; max-width: 100%; }
+        ul.ui-autocomplete { font-family: 'Roboto', sans-serif; padding: 2px; border-radius: 3px;}
+        ui.ui-autocomplete li a { padding: 2px; border-bottom: 1px solid #C0C0C0; }
+        .tst-search-widget { background-color: #0747A6; border-radius: 3px;}
+        .tst-search-widget nav li.active a span { color: #0747A6; }
+        #hotel-form div.location input { width: 100%; }
+        #hotel-form .roomsSummary { padding: .5em; border-radius: 3px; margin-bottom: 15px;}
+        #widgetPlaceholder .btn { background: #33CEFF; color: white; border: 1px solid #33B8FF; text-shadow: none; width: 150px;
+            margin: 0 auto;
+            display: block;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!--<script src="lib.js"></script> -->
+    <script>
+
+
+ window.TST = window.TST || {
+  onReady: function() {
+    TST.init(TST.config);
+    TST.SearchWidget.create({
+
+    // The tag / node that the widget should be attached to
+    tag: '#widgetPlaceholder',
+
+    // Products: ALL defaults to: flight, car, hotel, activity. To specify your own products, use an array. E.g.: ['hotel', 'flight', 'car']
+    products: [ 'hotel', 'flight', 'car', 'cruise', 'tour' ],
+
+    // this is the "selected" or "active" tab when the widget initializes.
+    focus: 'hotel',
+    tabDirection: 'vertical',
+    navOptions: {
+        autoHide: false
+    },
+    extras: {
+        autoComplete: true,
+        datePicker: true
+    }
+  });
+}
+};
+
+(function(window, document) {
+ window.TST.config = {
+   host: 'sandbox.tstllc.net'
+  //example amatravel.tstllc.net or etravel.az.aaa.com
+   }
+ var w = document.createElement('script');
+ w.type = 'text/javascript'; w.async = true;
+ w.src = 'https://' +  window.TST.config.host + '/web-services/assets/javascript/tst-api.min.js';
+ var s = document.getElementsByTagName('script')[0];
+ s.parentNode.insertBefore(w, s);
+})(window, document);
+    </script>
+
+</head>
+<body>
+<div id="widgetPlaceholder"></div>
+</body>
+</html>
